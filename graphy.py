@@ -19,7 +19,7 @@ for x in array:
 
 # Format and print [x][y] map
 def format(array):
-  for i in range (len(array)):
+  for i in range (sizeX):
     l = ''
     for x in array:
       l += x[i]
