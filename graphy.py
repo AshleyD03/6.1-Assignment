@@ -1,7 +1,5 @@
 import math
 
-
-    
 print('Quadratic Solve-Yes\nax^ + bx + c = 0')
 
 halfX = int(input('X graph length ?'))  
@@ -19,17 +17,24 @@ for x in array:
 
 # Format and print [x][y] map
 def format(array):
-  for i in range (sizeX):
-    l = ''
-    for x in array:
-      l += x[i]
-    print(l)
-
+  while True:
+      try:
+        for i in range (sizeX):
+            l = ''
+            for x in array:
+                if (i != sizeX) :
+                    l += x[i]    
+            print(l)
+        break
+        
+      # Error only occurs under large x y conditions on last line
+      # May be due to size of 2D array being 50+ 
+      except IndexError:
+          break
+    
 a = float(input('a ?'))
 b = float(input('b ?'))
 c = float(input('c ?'))
-
-tCords = []
 
 # Adds X mark for each true value
 for x in range (sizeX * accur):
@@ -41,9 +46,6 @@ for x in range (sizeX * accur):
   if (y < sizeY and y > -1) :
     x = int(round(x + 1e-15))
     array[x][y] = 'x'
-
-
-print(tCords)
 
 format(array)
 print(str(a)+'x^2 +',str(b)+'x +',str(c),'= 0')
