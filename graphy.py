@@ -1,3 +1,6 @@
+# Finished p3 Work
+# Further evidence of use of programming structure and design
+
 import math
 
 print('Quadratic Solve-Yes\nax^ + bx + c = 0')
